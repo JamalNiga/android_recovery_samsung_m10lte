@@ -48,7 +48,7 @@ TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_CRYPTO_FBE := true
 TW_INCLUDE_FBE := true
 
-# kernel and bootimg
+# Kernel
 BOARD_CUSTOM_BOOTIMG := true
 BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/dtbhtool/mkbootimg.mk
 BOARD_KERNEL_BASE := 0x100000000
@@ -73,7 +73,7 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 AB_OTA_UPDATER := false
 
 # TWRP specific build flags
-TARGET_OTA_ASSERT_DEVICE := m10lte,m10ltecis,m10ltexx,m10lteub,m10lteins,m10ltedtvvj,m10ltekx,m10ltedx,m10f
+TARGET_OTA_ASSERT_DEVICE := m10lte,m10f
 RECOVERY_SDCARD_ON_DATA := true
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
 TW_EXCLUDE_DEFAULT_USB_INIT := true
