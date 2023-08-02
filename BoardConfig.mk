@@ -47,11 +47,12 @@ TARGET_NO_RADIOIMAGE := true
 TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_CRYPTO_FBE := true
 TW_INCLUDE_FBE := true
+BOARD_USES_QCOM_DECRYPTION := true
 
-# Kernel
+# kernel and bootimg
 BOARD_CUSTOM_BOOTIMG := true
 BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/dtbhtool/mkbootimg.mk
-BOARD_KERNEL_BASE := 0x100000000
+BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
 TARGET_PREBUILT_KERNEL := device/samsung/m10lte/prebuilt/Image
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --dt device/samsung/m10lte/prebuilt/dt.img
@@ -61,20 +62,18 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 39845888
+
+# LZMA support
+LZMA_RAMDISK_TARGETS := recovery
 
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
 
 # Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
-
-# System as root
-BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
-BOARD_SUPPRESS_SECURE_ERASE := true
 AB_OTA_UPDATER := false
 
 # TWRP specific build flags
-TARGET_OTA_ASSERT_DEVICE := m10lte,m10f
+TARGET_OTA_ASSERT_DEVICE := m10lte, m10f, m10ltedx
 RECOVERY_SDCARD_ON_DATA := true
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
 TW_EXCLUDE_DEFAULT_USB_INIT := true
@@ -97,3 +96,11 @@ TW_INCLUDE_FUSE_NTFS := true
 
 # Vendor separation
 TARGET_COPY_OUT_VENDOR := vendor
+
+# Android Verified Boot
+BOARD_AVB_ENABLE := false
+BOARD_BUILD_DISABLED_VBMETAIMAGE := true
+
+# Include
+#TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/dtbhtool/include
+	

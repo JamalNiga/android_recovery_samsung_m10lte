@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2022 Open-Source Project
+# Copyright (C) 2018 The TwrpBuilder Open-Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter m10lte m10f, $(TARGET_DEVICE)),)
+ifeq ($(TARGET_DEVICE),m10lte)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
