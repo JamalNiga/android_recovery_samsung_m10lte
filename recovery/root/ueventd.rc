@@ -85,3 +85,4 @@ subsystem sound
 /*
 # USB 
 /dev/ttyGS*                 0660   system       system
+
