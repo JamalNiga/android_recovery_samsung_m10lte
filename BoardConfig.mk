@@ -91,6 +91,7 @@ TW_INCLUDE_NTFS_3G := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
+TW_USE_NEW_MINADBD := true
 
 # Screen
 TW_SCREEN_BLANK_ON_BOOT := true
